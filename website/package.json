@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tailwindcss build -i ./app/style.css -o ./app/public/style.css && tsc",
+    "watch:css": "tailwindcss build -i ./app/style.css -o. /app/public/style.css --watch",
+    "watch:ts": "tsc -w",
+    "watch:html": "bun x serve"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
+}
