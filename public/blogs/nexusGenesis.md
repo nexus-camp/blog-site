@@ -1,7 +1,7 @@
 ---
 title: Nexus Genesis
 date: 8th April 2024
-picture: /public/blog-img/nexusGenesis.png
+picture: ./blog-img/nexusGenesis.png
 description: Welcome to the launch of Project Peerplex, also known as Nexus! 🚀
 ---
 
