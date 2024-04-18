@@ -39,5 +39,18 @@ async function makeBlogPage() {
 
   img.setAttribute('src', blog.attributes.picture);
   title.textContent = blog.attributes.title;
-  content.innerHTML = marked.parse(blog.body);
+  let body = marked.parse(blog.body)
+              .replace(/<a/g, '<a target="_blank" class="underline"')
+              .replace(/<h1/g, '<br><h1 class="lg:text-3xl text-2xl underline"')
+              .replace(/<\/h1>/g, '</h1><br>')
+              .replace(/<h2/g, '<br><h2 class="lg:text-2xl text-xl mr-2 underline"')
+              .replace(/<\/h2>/g, '</h2><br>')
+              .replace(/<h3/g, '<br><h3 class="lg:text-xl text-lg mr-3 underline"')
+              .replace(/<\/h3>/g, '</h3><br>')
+              .replace(/<ol/g, '<ol class="list-decimal list-inside m-3"')
+              .replace(/<\/ol>/, '</ol><br>')
+              .replace(/<ul/g, '<ul class="list-disc list-inside m-3"')
+              .replace(/<\/ul>/, '</ul><br>')
+
+  content.innerHTML = body;
 }
